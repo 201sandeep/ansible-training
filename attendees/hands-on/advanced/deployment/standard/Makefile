@@ -40,7 +40,7 @@ run-nginx-1:
 
 run-nginx-2:
 	docker rm -f nginx2 || true
-	docker run -h nginx12 --name nginx2 -p8052:80 --link webappa:webappa --link webappb:webappb --link webappc:webappc --link webappd:webappd -itd training/ansible:nginx
+	docker run -h nginx2 --name nginx2 -p8052:80 --link webappa:webappa --link webappb:webappb --link webappc:webappc --link webappd:webappd -itd training/ansible:nginx
 
 
 run-all:
