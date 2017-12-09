@@ -16,7 +16,7 @@ build-all:
 
 run-dbserver:
 	docker rm -f dbserver || true
-	docker run -h dbserver --name dbserver -e MYSQL_ROOT_PASSWORD=new -p3306:3306 -itd training/ansible:mysql
+	docker run -h dbserver --name dbserver -e MYSQL_ROOT_PASSWORD=root -p3306:3306 -itd training/ansible:mysql
 
 run-webapp-a:
 	docker rm -f webappa || true
