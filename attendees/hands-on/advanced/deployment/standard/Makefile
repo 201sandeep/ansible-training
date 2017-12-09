@@ -15,6 +15,7 @@ build-all:
 	make build
 	make build-mysql
 	make build-tomcat
+	make build-haproxy
 
 run-dbserver:
 	docker rm -f dbserver || true
