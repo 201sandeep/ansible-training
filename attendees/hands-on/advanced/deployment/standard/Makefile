@@ -44,6 +44,9 @@ run-nginx-2:
 	docker rm -f nginx2 || true
 	docker run -h nginx2 --name nginx2 -p8052:80 --link webappa:webappa --link webappb:webappb --link webappc:webappc --link webappd:webappd -itd training/ansible:nginx
 
+run-haproxy:
+	docker rm -f haproxy || true
+	docker run -h haproxy --name haproxy -p80:80 --link nginx1:nginx1 --link nginx2:nginx2 -itd training/ansible:haproxy
 
 run-all:
 	make run-dbserver
@@ -53,6 +56,7 @@ run-all:
 	make run-webapp-d
 	make run-nginx-1
 	make run-nginx-2
+	make run-haproxy
 
 start-lab:
 	make build-all
