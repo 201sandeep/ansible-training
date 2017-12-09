@@ -1,6 +1,8 @@
 build:
 	docker build -t training/ansible:nginx -f nginx/Dockerfile.nginx .
        
+build-haproxy:
+	docker build -t training/ansible:haproxy -f haproxy/Dockerfile.haproxy . 
 
 build-mysql:
 	docker build -t training/ansible:mysql -f mysql/Dockerfile.mysql .
